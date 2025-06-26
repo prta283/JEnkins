@@ -23,6 +23,12 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
+                stage('Info') {
+    steps {
+        sh 'uname -a'
+    }
+}
+
             }
         }
     }
