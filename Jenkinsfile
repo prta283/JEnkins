@@ -17,18 +17,19 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running tests...'
+                sh 'date'
+            }
+        }
+
+        stage('Info') {
+            steps {
+                sh 'uname -a'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
-                stage('Info') {
-    steps {
-        sh 'uname -a'
-    }
-}
-
             }
         }
     }
