@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-username/your-java-repo.git'
+                git 'https://github.com/prta283/JEnkins/blob/main/Jenkinsfile'
             }
         }
 
