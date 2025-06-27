@@ -1,39 +1,38 @@
 pipeline {
     agent any
-    sh 'mvn clean install'
 
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/prta283/JEnkins/Jenkinsfile'
+                git 'https://github.com/your-username/your-java-repo.git'
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Build') {
             steps {
-                sh 'pip install -r requirements.txt || true'
+                sh 'mvn clean install'
             }
         }
 
-        stage('Run Tests') {
+        stage('Test') {
             steps {
-                sh 'python -m unittest discover || echo "Tests failed"'
+                sh 'mvn test'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deployment logic goes here...'
+                echo 'Deploy step (simulated)...'
             }
         }
     }
 
     post {
         success {
-            echo '✅ Build passed!'
+            echo '✅ Build passed and project is ready to deploy.'
         }
         failure {
-            echo '❌ Build failed!'
+            echo '❌ Build or tests failed. Check logs.'
         }
     }
 }
