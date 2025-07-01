@@ -1,5 +1,3 @@
 #!/bin/bash
-echo "🚀 Starting build..."
-echo "Running some checks..."
-python3 --version
-echo "✅ Build finished!"
+echo "🔧 Build started"
+echo "✅ Build completed"
