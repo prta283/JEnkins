@@ -1,0 +1,9 @@
+{
+  "name": "Jenkins on Ubuntu",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",  // This is your base Ubuntu image
+  "features": {
+    "java": "default" // Optional: Installs Java for you
+  },
+  "forwardPorts": [8080],
+  "postCreateCommand": "echo 'Ready to install Jenkins!'"
+}
